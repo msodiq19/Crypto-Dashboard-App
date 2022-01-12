@@ -1,22 +1,35 @@
 /* General styling */
+
 .container{
     width: 95%;
     margin: auto;
 }
-.section{
+.main-section{
     display: flex;
+    width: 100vw;
+    height: 100%;
 }
 .main{
     width: 85%;
-    height: 100vh;
+    height: auto;
     background-color: #1a2751;
     color: #fff;
+}
+.profit{
+    background-color: #0fb90f;
+    padding: 0.4em;
+    border-radius: 10px;
+}
+.loss{
+    background-color: #f32b2b;
+    padding: 0.4em;
+    border-radius: 10px;
 }
 
 /* Sidebar Component Styling */
 .sidebar{
     width: 15vw;
-    height: 100vh;
+    height: auto;
     background-color: #263461;
 }
 .navbar h3{
@@ -66,14 +79,23 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin: 2em 0;
+    margin: 1em 0;
 }
 .coin{
     width: 32%;
     background-color: #263461;
+    border-radius: 10px;
+}
+.coin-container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .coin-header{
     display: flex;
+    flex-flow: column nowrap;
     justify-content: space-between;
 }
 .coin .title{
@@ -83,4 +105,113 @@
 .coin img{
     width: 30px;
     height: 30px;
+    margin-right: 1em;
+}
+.coin .price{
+    margin: -0.5em 0 1em 2em;
+}
+
+/* Portfolio styling */
+.main-dashboard{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.portfolio{
+    width: 30%;
+}
+.crypto{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+}
+.crypto .amount{
+    text-transform: uppercase;
+    line-height: 0.7;
+    text-align: right;
+}
+.overall{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.history{
+    width: 30%;
+}
+
+.transaction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2e567e;
+    margin: 1em;
+}
+.details{
+    line-height: 0.7em;
+}
+
+@media(max-width: 920px) {
+    
+    .coin-container{
+        flex-flow: column nowrap;
+        align-items: baseline;
+    }
+    .profit,.loss{
+        margin: 0 0 1em 2em;
+    }
+    
+}
+@media (max-width: 800px) {
+    .portfolio{
+        width: 40%;
+    }
+    .overall{
+        display: none;
+    }
+    .history{
+        width: 40%;
+    }
+}
+@media (max-width:700px) {
+    .sidebar{
+        width: 25vw;
+    }
+    .main{
+        width: 75vw;
+    }
+    .coins{
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+    .coin{
+        width: 90%;
+        margin: 0.5em 0;
+    }
+    .coin-container{
+        flex-flow: row nowrap;
+        align-items: baseline;
+    }
+    .profit,.loss{
+        margin: 0;
+    }
+    .main-dashboard{
+        width: 90%;
+        margin: auto;
+        flex-flow: column nowrap;
+    }
+    .portfolio{
+        width: 90%;
+    }
+    .overall{
+        display: flex;
+        width: 90%;
+    }
+    .history{
+        width: 90%;
+    }
 }

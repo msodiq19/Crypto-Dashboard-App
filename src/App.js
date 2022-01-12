@@ -1,7 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
 import Dashboard from './components/pages/Dashboard'
 import Wallet from './components/pages/Wallet'
 
@@ -15,7 +14,6 @@ function App() {
     const livePrices = async () => {
       await fetch(api_url).then(res=>res.json()).then(data=>{
         getCoins(data)
-        console.log(data)
       })
     }
 
@@ -29,8 +27,8 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route strict path="/"> <Dashboard coins={coins} /> </Route>
-          <Route strict path="/wallet"> <Wallet /> </Route>
+          <Route path="/"><Dashboard coins={coins} /></Route>
+          <Route path="/wallet"><Wallet /></Route>
         </Switch>
       </div>
     </Router>
